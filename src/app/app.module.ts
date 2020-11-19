@@ -5,16 +5,20 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
+import { TransactionComponent } from './components/transaction/transaction.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent
+    NavbarComponent,
+    TransactionComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    TooltipModule.forRoot()
+    TooltipModule.forRoot(),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
