@@ -7,13 +7,15 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { TransactionComponent } from './components/transaction/transaction.component';
 import { HttpClientModule } from '@angular/common/http';
-import {NgxPaginationModule} from 'ngx-pagination'; 
+import { NgxPaginationModule } from 'ngx-pagination';
+import { FooterComponent } from './components/footer/footer.component'; 
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    TransactionComponent
+    TransactionComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

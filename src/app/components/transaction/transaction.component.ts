@@ -24,12 +24,12 @@ export class TransactionComponent implements OnInit {
     this.total_items_almost = 0;
     this.seller_id = 1;
     this.transactionsList = [];
-    this.getUrlParamenters();
-    this.retrieveTransactions();
+
   }
 
   ngOnInit(): void {
-    //console.log("ttt="+ this.transactionsList);
+    this.getUrlParamenters();
+    this.retrieveTransactions();
   }
 
   getUrlParamenters() {
