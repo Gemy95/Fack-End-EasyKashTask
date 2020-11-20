@@ -40,7 +40,7 @@ export class TransactionComponent implements OnInit {
 
   retrieveTransactions(): any {
     this.getUrlParamenters();
-    this.transactionService.getUserTransaction(this.per_page, this.page, this.seller_id).subscribe(
+    this.transactionService.getSellerTransactions(this.per_page, this.page, this.seller_id).subscribe(
       (data) => {
         this.transactionsList = data.data.transaction;
         this.total = data.data.paging.total;

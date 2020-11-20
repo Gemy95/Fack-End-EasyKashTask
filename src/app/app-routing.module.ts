@@ -7,7 +7,7 @@ const routes: Routes = [
   { path: 'transaction', component: TransactionComponent },
   { path: 'home', component: HomeComponent }, 
   { path: '', redirectTo:'home' , pathMatch:'full' },
-  //{ path: '**' ,component:NotFoundComponent} 
+  { path: '**' ,component:HomeComponent} 
 ];
 
 @NgModule({
