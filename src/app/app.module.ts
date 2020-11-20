@@ -6,10 +6,11 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { TransactionComponent } from './components/transaction/transaction.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule,HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './components/home/home.component'; 
+import { Interceptor } from '../app/interceptor';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,7 @@ import { HomeComponent } from './components/home/home.component';
     HttpClientModule,
     NgxPaginationModule
   ],
-  providers: [],
+  providers: [  { provide: HTTP_INTERCEPTORS, useClass: Interceptor, multi: true }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
