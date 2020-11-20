@@ -45,11 +45,9 @@ export class TransactionComponent implements OnInit {
         this.transactionsList = data.data.transaction;
         this.total = data.data.paging.total;
         this.total_items_almost = this.total * this.per_page;
-        //console.log("transactionsList="+ JSON.stringify(this.transactionsList));
-        //console.log("total="+this.total)
-
       }, (error) => {
-        console.log("error=" + error)
+        console.log("error=" + JSON.stringify(error));
+        this.router.navigateByUrl(`/notFound`);
       })
 
   }
