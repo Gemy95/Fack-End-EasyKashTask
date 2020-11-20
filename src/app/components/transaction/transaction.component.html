@@ -1,0 +1,36 @@
+<div>
+<table class="table table-light">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">transaction_id</th>
+        <th scope="col">seller_id</th>
+        <th scope="col">offer_id</th>
+        <th scope="col">title</th>
+        <th scope="col">fees</th>
+        <th scope="col">created_at</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let transaction of transactionsList | paginate: { id:'pagination-list' ,itemsPerPage: per_page, currentPage: page,totalItems:total_items_almost } ; let i = index">
+        <td>{{ i+1 }}</td>
+        <td>{{ transaction.transaction_id }}</td>
+        <td>{{ transaction.seller_id }}</td>
+        <td>{{ transaction.offer_id }}</td>
+        <td>{{ transaction.title }}</td>
+        <td>{{ transaction.fees }}</td>
+        <td>{{ transaction.created_at }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="d-flex justify-content-center">
+<pagination-controls  id="pagination-list"
+                      (pageChange)="handlePageChange($event)"
+                      previousLabel="Previous"
+                      nextLabel="Next"
+                      screenReaderPaginationLabel="Pagination"
+                      screenReaderPageLabel="page"
+                      screenReaderCurrentLabel="You're on page">
+</pagination-controls>
